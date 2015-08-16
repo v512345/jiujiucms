@@ -1,0 +1,15 @@
+mybatis的主配置文件给实体类别名
+<typeAliases>
+	<typeAlias type="com.xuliangjun.jiujiucms.modules.system.entry.User" alias="user"/>
+</typeAliases>
+
+
+mybatis子配置文件使用reultType  typeAlias
+<mapper namespace="UserXMapper">
+	<!-- 判断用户名和密码 -->
+	<select id="getUserInfo" parameterType="user" resultType="user" useCache="false">
+		select * from SYS_USER 
+	</select>
+</mapper>
+
+mybatis  sqlSessionTemplate提供的方法利用namespace指定那个语句
