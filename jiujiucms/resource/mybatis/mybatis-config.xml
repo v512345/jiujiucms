@@ -6,6 +6,8 @@
 	
 
 	<typeAliases>
+		<typeAlias type="com.xuliangjun.jiujiucms.modules.system.entry.Role" alias="Role"/>
+		<typeAlias type="com.xuliangjun.jiujiucms.modules.system.entry.Menu" alias="Menu"/>
 		<typeAlias type="com.xuliangjun.jiujiucms.modules.system.entry.User" alias="user"/>
 		<typeAlias type="com.xuliangjun.jiujiucms.common.util.PageData" alias="pd"/>
 	</typeAliases>
