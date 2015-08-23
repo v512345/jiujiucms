@@ -1,4 +1,4 @@
-package com.xuliangjun.jiujiucms.modules.system.entry;
+package com.xuliangjun.jiujiucms.modules.system.entity;
 /**
  * 
 * 类名称：Role.java

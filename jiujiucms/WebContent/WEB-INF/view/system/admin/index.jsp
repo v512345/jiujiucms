@@ -14,18 +14,18 @@
 <base href="<%=basePath%>">
 
 	<!-- jsp文件头和头部 -->
-	<%@ include file="top.jsp"%>
+	<%@ include file="/WEB-INF/view/common/top.jsp"%>
 	<style type="text/css">
 	.commitopacity{position:absolute; width:100%; height:100px; background:#7f7f7f; filter:alpha(opacity=50); -moz-opacity:0.8; -khtml-opacity: 0.5; opacity: 0.5; top:0px; z-index:99999;}
 	</style>
 	
 	<!-- 即时通讯 -->
-	<script type="text/javascript">var wimadress="${pd.WIMIP}:${pd.WIMPORT}";</script>
+	 <script type="text/javascript">var wimadress="${pd.WIMIP}:${pd.WIMPORT}";</script>
 	<script type="text/javascript">var oladress="${pd.OLIP}:${pd.OLPORT}";</script>
 	<link rel="stylesheet" type="text/css" href="plugins/websocketInstantMsg/ext4/resources/css/ext-all.css">
 	<link rel="stylesheet" type="text/css" href="plugins/websocketInstantMsg/css/websocket.css" />
 	<script type="text/javascript" src="plugins/websocketInstantMsg/ext4/ext-all-debug.js"></script>
-	<script type="text/javascript" src="plugins/websocketInstantMsg/websocket.js"></script>
+	<script type="text/javascript" src="plugins/websocketInstantMsg/websocket.js"></script> 
 	<!-- 即时通讯 -->
 	
 </head>
@@ -43,20 +43,20 @@
 
 		<div id="main-content" class="clearfix">
 
-			<div id="jzts" style="display:none; width:100%; position:fixed; z-index:99999999;">
+			<!-- <div id="jzts" style="display:none; width:100%; position:fixed; z-index:99999999;">
 			<div class="commitopacity" id="bkbgjz"></div>
 			<div style="padding-left: 70%;padding-top: 1px;">
 				<div style="float: left;margin-top: 3px;"><img src="static/images/loadingi.gif" /> </div>
 				<div style="margin-top: 5px;"><h4 class="lighter block red">&nbsp;加载中 ...</h4></div>
 			</div>
-			</div>
+			</div>  -->
 
 			<div>
 				<iframe name="mainFrame" id="mainFrame" frameborder="0" src="tab.do" style="margin:0 auto;width:100%;height:100%;"></iframe>
 			</div>
 
 			<!-- 换肤 -->
-			<div id="ace-settings-container">
+			<%--  <div id="ace-settings-container">
 				<div class="btn btn-app btn-mini btn-warning" id="ace-settings-btn">
 					<i class="icon-cog"></i>
 				</div>
@@ -77,11 +77,13 @@
 						<span>&nbsp; 选择皮肤</span>
 					</div>
 					<div>
-						<label><input type='checkbox' name='menusf' id="menusf"
-							onclick="menusf();" /><span class="lbl" style="padding-top: 5px;">菜单缩放</span></label>
+						<label>
+						<input type='checkbox' name='menusf' id="menusf" onclick="menusf();" />
+						<span class="lbl" style="padding-top: 5px;">菜单缩放</span>
+						</label>
 					</div>
 				</div>
-			</div>
+			</div> --%>
 			<!--/#ace-settings-container-->
 
 		</div>
@@ -90,7 +92,9 @@
 	<!--/.fluid-container#main-container-->
 	<!-- basic scripts -->
 		<!-- 引入 -->
-		<script type="text/javascript">window.jQuery || document.write("<script src='static/js/jquery-1.9.1.min.js'>\x3C/script>");</script>
+		<script type="text/javascript">
+		window.jQuery || document.write("<script src='static/js/jquery-1.9.1.min.js'>\x3C/script>");
+		</script>
 		<script src="static/js/bootstrap.min.js"></script>
 		<script src="static/js/ace-elements.min.js"></script>
 		<script src="static/js/ace.min.js"></script>

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import com.xuliangjun.jiujiucms.common.dao.DaoSupport;
 import com.xuliangjun.jiujiucms.common.entity.Page;
 import com.xuliangjun.jiujiucms.common.util.PageData;
-import com.xuliangjun.jiujiucms.modules.system.entry.User;
+import com.xuliangjun.jiujiucms.modules.system.entity.User;
 
 
 @Service("userService")

@@ -3,9 +3,7 @@
 		   <div class="container-fluid">
 			  <a class="brand"><small><i class="icon-leaf"></i> ${pd.SYSNAME}</small> </a>
 			  
-			  <ul class="nav ace-nav pull-right">
-			  
-			  
+			   <ul class="nav ace-nav pull-right">
 					<li class="grey">
 						<a href="javascript:alert('预留功能,待开发');" class="dropdown-toggle" data-toggle="dropdown">
 							<i class="icon-tasks"></i>
@@ -155,7 +153,9 @@
 							<li><a href="logout"><i class="icon-off"></i> 退出</a></li>
 						</ul>
 					</li>
-			  </ul><!--/.ace-nav-->
+			  </ul> 
+			  
+			  <!--/.ace-nav-->
 		   </div><!--/.container-fluid-->
 		  </div><!--/.navbar-inner-->
 		</div><!--/.navbar-->

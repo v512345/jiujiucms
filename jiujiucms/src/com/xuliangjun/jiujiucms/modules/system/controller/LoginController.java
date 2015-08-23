@@ -28,9 +28,9 @@ import com.xuliangjun.jiujiucms.common.util.DateUtil;
 import com.xuliangjun.jiujiucms.common.util.PageData;
 import com.xuliangjun.jiujiucms.common.util.RightsHelper;
 import com.xuliangjun.jiujiucms.common.util.Tools;
-import com.xuliangjun.jiujiucms.modules.system.entry.Menu;
-import com.xuliangjun.jiujiucms.modules.system.entry.Role;
-import com.xuliangjun.jiujiucms.modules.system.entry.User;
+import com.xuliangjun.jiujiucms.modules.system.entity.Menu;
+import com.xuliangjun.jiujiucms.modules.system.entity.Role;
+import com.xuliangjun.jiujiucms.modules.system.entity.User;
 import com.xuliangjun.jiujiucms.modules.system.service.MenuService;
 import com.xuliangjun.jiujiucms.modules.system.service.RoleService;
 import com.xuliangjun.jiujiucms.modules.system.service.UserService;
@@ -199,8 +199,8 @@ public class LoginController extends BaseController {
 	/**
 	 * 访问系统首页
 	 */
-	@RequestMapping(value="/main/{changeMenu1}")
-	public ModelAndView login_index(@PathVariable("changeMenu1") String changeMenu){
+	@RequestMapping(value="/main/{changeMenu}")
+	public ModelAndView login_index(@PathVariable("changeMenu") String changeMenu){
 		ModelAndView mv = this.getModelAndView();
 		PageData pd = new PageData();
 		pd = this.getPageData();
@@ -227,9 +227,9 @@ public class LoginController extends BaseController {
 				List<Menu> allmenuList = new ArrayList<Menu>();
 				
 				if(null == session.getAttribute(Const.SESSION_allmenuList)){
-					allmenuList = menuService.listAllMenu();
-					if(Tools.notEmpty(roleRights)){
-						for(Menu menu : allmenuList){
+					allmenuList = menuService.listAllMenu();//查找所有节点，包括父节点和子节点
+					if(Tools.notEmpty(roleRights)){         
+						for(Menu menu : allmenuList){      //对所有节点进行遍历
 							menu.setHasMenu(RightsHelper.testRights(roleRights, menu.getMENU_ID()));
 							if(menu.isHasMenu()){
 								List<Menu> subMenuList = menu.getSubMenu();
@@ -245,7 +245,7 @@ public class LoginController extends BaseController {
 				}
 				
 				//切换菜单=====
-				List<Menu> menuList = new ArrayList<Menu>();
+			/*	List<Menu> menuList = new ArrayList<Menu>();
 				//if(null == session.getAttribute(Const.SESSION_menuList) || ("yes".equals(pd.getString("changeMenu")))){
 				if(null == session.getAttribute(Const.SESSION_menuList) || ("yes".equals(changeMenu))){
 					List<Menu> menuList1 = new ArrayList<Menu>();
@@ -273,9 +273,11 @@ public class LoginController extends BaseController {
 						session.setAttribute("changeMenu", "2");
 						menuList = menuList2;
 					}
+					menuList.addAll(menuList1);
+					menuList.addAll(menuList2);
 				}else{
 					menuList = (List<Menu>)session.getAttribute(Const.SESSION_menuList);
-				}
+				}*/
 				//切换菜单=====
 				
 				if(null == session.getAttribute(Const.SESSION_QX)){
@@ -299,10 +301,10 @@ public class LoginController extends BaseController {
 					}
 				}
 			 	//读取websocket配置
-			 	
+		 	
 				mv.setViewName("system/admin/index");
 				mv.addObject("user", user);
-				mv.addObject("menuList", menuList);
+				mv.addObject("menuList", allmenuList);
 			}else {
 				mv.setViewName("system/admin/login");//session失效后跳转登录页面
 			}
@@ -371,5 +373,24 @@ public class LoginController extends BaseController {
 		}	
 		return map;
 	}
+	
+	/**
+	 * 进入tab标签
+	 * @return
+	 */
+	@RequestMapping(value="/tab")
+	public String tab(){
+		return "system/admin/tab";
+	}
+	
+	/**
+	 * 进入首页后的默认页面
+	 * @return
+	 */
+	@RequestMapping(value="/login_default")
+	public String defaultPage(){
+		return "system/admin/default";
+	}
+
 	
 }

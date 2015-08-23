@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.xuliangjun.jiujiucms.common.dao.DaoSupport;
 import com.xuliangjun.jiujiucms.common.util.PageData;
-import com.xuliangjun.jiujiucms.modules.system.entry.Menu;
+import com.xuliangjun.jiujiucms.modules.system.entity.Menu;
 
 @Service("menuService")
 public class MenuService{

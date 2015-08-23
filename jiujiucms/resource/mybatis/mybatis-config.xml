@@ -6,10 +6,14 @@
 	
 
 	<typeAliases>
-		<typeAlias type="com.xuliangjun.jiujiucms.modules.system.entry.Role" alias="Role"/>
-		<typeAlias type="com.xuliangjun.jiujiucms.modules.system.entry.Menu" alias="Menu"/>
-		<typeAlias type="com.xuliangjun.jiujiucms.modules.system.entry.User" alias="user"/>
+		<typeAlias type="com.xuliangjun.jiujiucms.modules.system.entity.Role" alias="Role"/>
+		<typeAlias type="com.xuliangjun.jiujiucms.modules.system.entity.Menu" alias="Menu"/>
+		<typeAlias type="com.xuliangjun.jiujiucms.modules.system.entity.User" alias="user"/>
 		<typeAlias type="com.xuliangjun.jiujiucms.common.util.PageData" alias="pd"/>
+		
+		<typeAlias type="com.xuliangjun.jiujiucms.common.entity.Page" alias="Page"/>
+		
+		<typeAlias type="com.xuliangjun.jiujiucms.modules.cms.entity.Template" alias="Template"/>
 	</typeAliases>
 	
 	

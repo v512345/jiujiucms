@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.xuliangjun.jiujiucms.common.dao.DaoSupport;
 import com.xuliangjun.jiujiucms.common.util.PageData;
-import com.xuliangjun.jiujiucms.modules.system.entry.Role;
+import com.xuliangjun.jiujiucms.modules.system.entity.Role;
 
 @Service("roleService")
 public class RoleService{
