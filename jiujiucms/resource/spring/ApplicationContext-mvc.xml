@@ -10,9 +10,9 @@
 	<mvc:annotation-driven/>	
 	<mvc:default-servlet-handler/>
 	
-	<!-- <context:component-scan base-package="com.xuliangjun.jiujiucms.modules.Controller" /> 不报错，游览器访问找不到对应的controller -->
-	<context:component-scan base-package="com.xuliangjun.jiujiucms.modules" />
-	<context:component-scan base-package="com.xuliangjun.jiujiucms.common" />
+	<!-- <context:component-scan base-package="com.jiujiucms.modules.Controller" /> 不报错，游览器访问找不到对应的controller -->
+	<context:component-scan base-package="com.jiujiucms.modules" />
+	<context:component-scan base-package="com.jiujiucms.common" />
 
 	<!-- 配置SpringMVC的视图解析器 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
